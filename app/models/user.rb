@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     validate :password_lower_case
     validate :password_uppercase
-    validate :password_special_char
+    # validate :password_special_char
     validate :password_contains_number
   
     def password_uppercase
