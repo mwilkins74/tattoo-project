@@ -1,19 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap');
+
+body {
+  font-family: 'Inconsolata', monospace;
+  font-family: 'Miltonian Tattoo', cursive;
+}
+
 .App {
   text-align: center;
 }
-
-/* this is a test */
 
 .App-logo {
   height: 80vmin;
   pointer-events: none;
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-header {
   background-color: white;
@@ -27,7 +26,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: black;
 }
 
 @keyframes App-logo-spin {
