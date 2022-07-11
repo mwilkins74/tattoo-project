@@ -4,35 +4,43 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import Profile from "./Profile";
 import "./App.css";
+import Login from "./Login";
+
 
 
 function App() {
-  const [postTattoos, setPostTattoos] = useState([])
+  const [tattoos, setTattoos] = useState([]);
 
-  useEffect(() => {
-    fetch("/me")
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-    // setTattoos(data)
-  })
+  const [user, setUser] = useState(false)
 
+ useEffect(() => {
+   fetch("/me").then((r) => {
+     if (r.ok) {
+       r.json().then((user) => setUser(user));
+     }
+   });
+ }, []);
+       
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <NavBar postTattoos={postTattoos} setTattoos={setPostTattoos} />
-      <Switch>
-        <Route exact path="/">
-          {/* <Login /> */}
-        </Route>
+      <NavBar user={user} setUser={setUser} />
+      <div>
+        <Switch>
 
-        <Route path="/Home">
-          <Home />
-        </Route>
+          <Route exact path="/">
+            <Login setUser={user} />
+          </Route>
 
-        <Route path="/Profile">
-          <Profile />
-        </Route>
-      </Switch>
+          <Route exact path="/Home  ">
+            <Home user={user} tattoos={tattoos} setTattoos={setTattoos} />
+          </Route>
+
+          <Route path="/Profile">
+            <Profile />
+          </Route>
+
+        </Switch>
+      </div>
     </div>
   );
 }
