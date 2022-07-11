@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
 Tattoo.destroy_all
 Style.destroy_all
@@ -27,6 +19,7 @@ Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://dcassetcdn
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://us.123rf.com/450wm/insima/insima2005/insima200500003/148797794-koi-carp-swimming-upstream-japanese-gold-fish-with-water-waves-tattoo-black-and-white-vector-illustr.jpg?ver=6")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://papik.pro/en/uploads/posts/2022-06/1655368955_36-papik-pro-p-japanese-tattoo-drawings-38.jpg")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, imag_url: "https://www.jing.fm/clipimg/detail/276-2769056_japanese-dragon-tattoo-design.png")
+Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://www.jing.fm/clipimg/detail/276-2769056_japanese-dragon-tattoo-design.png")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://i.pinimg.com/originals/6f/1c/3a/6f1c3a9e772f0c1b758fb6ce6ec7ca7f.jpg")
 
 # Realism
@@ -58,5 +51,5 @@ Tattoo.create!(user_id: demoUser.id, style_id: 5, image_url: "https://i.pinimg.c
 Tattoo.create!(user_id: demoUser.id, style_id: 5, image_url: "https://www.fashionbeans.com/wp-content/uploads/2022/01/SkullTattoos_juliaszewczykowska.jpg")
 
 
-puts "Done tattooing!"
 
+puts "Done tattooing!"

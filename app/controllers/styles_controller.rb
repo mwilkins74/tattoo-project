@@ -9,4 +9,8 @@ class StylesController < ApplicationController
     end
     
 
+    private
+    def find_style
+        Style.find(params[:id])
+    end
 end
