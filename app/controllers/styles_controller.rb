@@ -5,7 +5,7 @@ class StylesController < ApplicationController
     end
 
     def show
-        render json: Style.find(params[:id])
+        render json: find_style
     end
     
 
