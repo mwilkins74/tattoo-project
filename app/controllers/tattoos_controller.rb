@@ -12,7 +12,7 @@ class TattoosController < ApplicationController
     private
 
     def tattoo_params
-        params.permit(:image, :style_id, :user_id)
+        params.permit(:image_url, :style_id, :user_id)
     end
 
     def find_tattoo
