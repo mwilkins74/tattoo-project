@@ -1,15 +1,11 @@
 import React from 'react';
 
-function Home({ postTattoos, setPostTattoos }) {
-    // const Tattoos = tattoos.map((tattoo) => {
-    //     <TattooCard
-    //         key={tattoo.id}
-    //         id={tattoo.id}
-    //         image={image}
-    //     />
-    // })
+function Home() {
 
-    return <div></div>
+    return (<div>
+        
+    </div>)
+
 }
 
 export default Home;

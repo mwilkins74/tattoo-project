@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :tattoos
   resources :users
   
+
   get "/me", to: "users#show"
+  post "/signup", to: "users#create"
+  patch "/user/:id", to: "users#update"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
