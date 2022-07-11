@@ -26,7 +26,7 @@ Style.create!(style: "Skulls")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://dcassetcdn.com/design_img/3961884/807976/26834609/cwd67c86rh9kesy4df26xw7fem_thumbnail.png")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://us.123rf.com/450wm/insima/insima2005/insima200500003/148797794-koi-carp-swimming-upstream-japanese-gold-fish-with-water-waves-tattoo-black-and-white-vector-illustr.jpg?ver=6")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://papik.pro/en/uploads/posts/2022-06/1655368955_36-papik-pro-p-japanese-tattoo-drawings-38.jpg")
-Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://www.jing.fm/clipimg/detail/276-2769056_japanese-dragon-tattoo-design.png")
+Tattoo.create!(user_id: demoUser.id, style_id: 1, imag_url: "https://www.jing.fm/clipimg/detail/276-2769056_japanese-dragon-tattoo-design.png")
 Tattoo.create!(user_id: demoUser.id, style_id: 1, image_url: "https://i.pinimg.com/originals/6f/1c/3a/6f1c3a9e772f0c1b758fb6ce6ec7ca7f.jpg")
 
 # Realism
