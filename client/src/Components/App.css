@@ -5,29 +5,5 @@ body {
   font-family: 'Miltonian Tattoo', cursive;
 }
 
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 80vmin;
-  position: fixed;
-  top: 0px;
-
-}
-
-.App-header {
-  background-color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: black;
-}
 
