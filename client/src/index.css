@@ -1,79 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: grey;
+}
+
+.App {
+  text-align: center;
+  background-color: grey;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.logo img {
+  display: inline-block;
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-/* Image Sidebar */
-.gallery-container {
-  display: flex;
+/* NavBar */
+
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/* Image Gallery */
+.row {
   justify-content: center;
-  position: relative;
-  bottom: 0px;
-}
-
-.thumbnails {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
-.thumbnails img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
-.scrollbar {
-  width: 1px;
-  height: 720px;
-  background: #ccc;
-  display: block;
-  margin: 0 0 0 8px;
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
-.thumb {
-  width: 1px;
-  position: absolute;
-  height: 0;
-  background: #000;
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
-.slides {
-  margin: 0 16px;
-  display: grid;
-  grid-auto-flow: row;
-  gap: 1rem;
-  width: calc(540px + 1rem);
-  padding: 0 0.25rem;
-  height: 720px;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
-
-.slides > div {
-  scroll-snap-align: start;
-}
-
-.slides img {
-  width: 540px;
-  object-fit: contain;
-}
-
-.slides::-webkit-scrollbar {
-  display: none;
-}
-
-

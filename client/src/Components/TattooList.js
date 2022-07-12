@@ -1,12 +1,12 @@
 import React from 'react';
 import TattooCard from './TattooCard';
 
-function TattooList({ tattoos, setTattoos }) {
+function TattooList({ tattoos }) {
   const theTattoos = tattoos.map((tattoo) => {
       <TattooCard
           key={tattoo.id}
           id={tattoo.id}
-          tattoo={tattoo}
+          // tattoo={tattoo}
           image_url={tattoo.image_url} />;
   });
 
