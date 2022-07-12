@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
   resources :styles, only: [:index, :show]
-  resources :tattoos, only: [:index, :show] #maybe create if we don't get away with it
-  resources :users, only: [:create, :show, :update]
+  resources :tattoos, only: [:show] #maybe create if we don't get away with it
+  # resources :users, only: [:show, :update]
+  # , only: [:create, :show, :update]
   
 
   get "/me", to: "users#show"
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get '/tattoos', to: "tattoos#index"
 
 
 

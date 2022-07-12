@@ -1,7 +1,9 @@
 class TattoosController < ApplicationController
 
     def index
-        render json: Tattoo.all
+        tattoo = Tattoo.all
+        p tattoo
+        render json: tattoo
     end
 
     def show

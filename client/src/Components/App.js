@@ -4,15 +4,15 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import Profile from "./Profile";
 import "./App.css";
-import Login from "./Login";
+import Login from "./Login/Login";
 
 
 
 function App() {
-  const [tattoos, setTattoos] = useState([]);
+  // const [tattoos, setTattoos] = useState([]);
 
-  const [user, setUser] = useState(false)
-
+  const [user, setUser] = useState(null)
+  
  useEffect(() => {
    fetch("/me").then((r) => {
      if (r.ok) {
@@ -20,6 +20,7 @@ function App() {
      }
    });
  }, []);
+  if (!user) return <Login setUser={user} />;
        
   return (
     <div className="App">
@@ -32,7 +33,7 @@ function App() {
           </Route>
 
           <Route exact path="/Home  ">
-            <Home user={user} tattoos={tattoos} setTattoos={setTattoos} />
+            <Home user={user}  />
           </Route>
 
           <Route path="/Profile">
