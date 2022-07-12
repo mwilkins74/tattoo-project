@@ -6,8 +6,11 @@ function LoginForm({ setUser }) {
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+
+
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(e)
     setIsLoading(true);
     fetch("/login", {
       method: "POST",
@@ -18,9 +21,9 @@ function LoginForm({ setUser }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => console.log(user))
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => console.log(err.errors));
       }
     });
   }
@@ -28,11 +31,12 @@ function LoginForm({ setUser }) {
   return (
     <div>
       {/* <h1>Login</h1> */}
-      <form onSubmit={handleSubmit} />
+      <form onSubmit={handleSubmit}>
       <label>
         Username
         <input
           type="text"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
         ></input>
       </label>
@@ -41,13 +45,15 @@ function LoginForm({ setUser }) {
         Password
         <input
           type="text"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </label>
-          <button>{isLoading ? "Loading..." : "Login"}</button>
+          <button type="submit">{isLoading ? "Loading..." : "Login"}</button>
           {errors.map((err) => (
               <alert key={err}>"Invalid information"</alert>
           ))}
+      </form>
     </div>
   );
 }

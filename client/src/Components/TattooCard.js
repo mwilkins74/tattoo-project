@@ -1,12 +1,11 @@
 import React from 'react';
 
-function TattooCard({id, image_url}) {
+function TattooCard() {
 
     return (
-        <div>
-            <img src={image_url} alt="Tattoo" />
-        </div>
-    )
+      <div>
+       </div>
+    );
 }
 
 export default TattooCard;
