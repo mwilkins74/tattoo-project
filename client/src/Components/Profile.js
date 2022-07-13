@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Profile({onTattooLike}) {
    
 
     return (
-        <div></div>
+        <div>
+        </div>
     )
 }
 

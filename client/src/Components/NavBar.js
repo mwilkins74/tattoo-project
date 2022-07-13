@@ -5,7 +5,7 @@ import Profile from "./Profile";
 
 function NavBar() {
   return (
-    <div class="nav">
+    <div class="nav-link text-light btn-block col-sm-4 btn btn-danger option-button btn-outline-dark">
       <div>
         {/* <img
         src="https://user-images.githubusercontent.com/102488171/178009363-a7e88595-2387-4be9-90c1-9e0290e74fb4.png"
@@ -13,13 +13,15 @@ function NavBar() {
         alt="logo" */}
         {/* />////// */}
 
-        {/* <Link exact to="/Home">
-          <Home />
-        </Link> */}
-        <Link to="/Profile" class="nav-link text-light btn-block col-sm-4 btn btn-danger option-button btn-outline-dark" >
+        <Link exact to="/Home">
+          Home
+        </Link>
+        <Link to="/Profile" >
           <Profile /> Profile
         </Link>
-        {/* <Link>Log Out</Link> */}
+        <Link to="/">
+          Log Out
+        </Link>
       </div>
     </div>
   );
