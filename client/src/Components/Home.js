@@ -18,14 +18,14 @@ function Home() {
     
   }, []);
 
-  useEffect(() => {
-    fetch("/http://127.0.0.1:3000/tattoos")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setTattoos(data)
-      })
-  }, []);
+  // useEffect(() => {
+  //   fetch("/http://127.0.0.1:3000/tattoos")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data)
+  //       setTattoos(data)
+  //     })
+  // }, []);
 
   return (
     <div>

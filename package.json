@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.4.1",
+    "react-animated-heart": "^0.0.7",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
   }

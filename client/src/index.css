@@ -91,3 +91,25 @@ code {
     max-width: 100%;
   }
 }
+
+/* Like Button */
+
+.like-button {
+color: red;
+font-size: 20px;
+cursor: pointer;
+border-radius: 10rem;
+background-color: transparent;
+border: transparent;
+}
+
+.like-button :hover {
+color: red;
+}
+
+.fa-heart {
+  position: absolute;
+  z-index: 2;
+  color: red;
+  position: absolute;
+}
