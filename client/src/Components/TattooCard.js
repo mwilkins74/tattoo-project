@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function TattooCard({ image_url}) {
+function TattooCard({ onTattooLike }) {
+  const [liked, setLiked] = useState(false)
+
+  function handleLike() {
+    onTattooLike(tattoo)
+    setLiked(!liked)
+  }
 
     return (
       <div>
-        <img src={image_url} />
-       </div>
+        <div>
+          <img src={image_url} />
+        </div>
+      </div>
     );
 }
 
