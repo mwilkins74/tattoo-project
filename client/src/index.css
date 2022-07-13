@@ -55,6 +55,14 @@ code {
   top: 0;
 }
 
+/* .gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-rows: repeat(auto-fit, 260px);
+  grid-auto-flow: dense;
+  grid-gap: 0.3rem;
+} */
+
 /* Image Gallery */
 .row {
   justify-content: center;
@@ -63,7 +71,6 @@ code {
   padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
   max-width: 25%;
@@ -76,7 +83,6 @@ code {
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
@@ -84,32 +90,9 @@ code {
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
     max-width: 100%;
   }
-}
-
-/* Like Button */
-
-.like-button {
-color: red;
-font-size: 20px;
-cursor: pointer;
-border-radius: 10rem;
-background-color: transparent;
-border: transparent;
-}
-
-.like-button :hover {
-color: red;
-}
-
-.fa-heart {
-  position: absolute;
-  z-index: 2;
-  color: red;
-  position: absolute;
 }

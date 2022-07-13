@@ -1,23 +1,33 @@
-import React from 'react';
-import TattooCard from './TattooCard';
+import React, { useState } from "react";
+import TattooCard from "./TattooCard";
 
+function TattooList({ tattoos }) {
 
-function TattooList({ onTattooLike }) {
-     const [isClick, setClick] = useState(false);
-
-  // const theTattoos = tattoos.map((tattoo) => {
-  //     <TattooCard
-  //       key={tattoo.id}
-  //       id={tattoo.id}
-  //       image_url={tattoo.image_url}
-  //       onTattooLike={onTattooLike}
-  //     />;
-  // });
-
+  // const theTattoos = { tattoos };
+  function sliceTattoos(theTattoos, chunkSize) {
+    const response = [];
+    for (let i = 0; i < theTattoos.length; i += chunkSize) {
+      const chunk = theTattoos.slice(i, i + chunkSize);
+      response.push(chunk);
+    }
+    return response;
+  }
+  let equalArray = sliceTattoos(tattoos, 10);
+  // console.log(tattoos);
   return (
-    <div>
-      <Heart isClick={isClick} onClick={() => setClick(!isClick)} />
-      {theTattoos}
+    // tattoos.map((tattoo) => {
+    //   return <TattooCard key={tattoo.id} tattoo={tattoo} />;
+    // })
+    <div className="row">
+      {equalArray.map((arr) => {
+        return (
+          <div className="column">
+            {arr.map((tattoo) => {
+              return <TattooCard key={tattoo.id} tattoo={tattoo} />;
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 }
