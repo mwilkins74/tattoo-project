@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :styles, only: [:index, :show]
   resources :tattoos, only: [:show] #maybe create if we don't get away with it
   # resources :users, only: [:show, :update]
-  # , only: [:create, :show, :update]
   
 
   get "/me", to: "users#show"

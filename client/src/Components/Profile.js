@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Profile() {
+function Profile({onTattooLike}) {
+   
+
     return (
         <div></div>
     )
