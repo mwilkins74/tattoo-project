@@ -44,7 +44,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={<><NavBar/><Profile onTattooLike={onTattooLike}/></>}
+          element={<><NavBar/><Profile user={user} onTattooLike={onTattooLike}/></>}
         />
       </Routes>
     </div>

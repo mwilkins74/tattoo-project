@@ -33,7 +33,6 @@ function Home() {
       {/* <TattooList onTattooLike={ onTattooLike}/> */}
       <NavBar />
       <Gallery />
-      <Profile />
     </div>
   );
 }

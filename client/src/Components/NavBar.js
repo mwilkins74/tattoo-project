@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import Home from "./Home";
-import Profile from "./Profile";
 
 function NavBar() {
   return (
@@ -17,7 +16,7 @@ function NavBar() {
           Home
         </Link>
         <Link to="/Profile" >
-          <Profile /> Profile
+          Profile
         </Link>
         <Link to="/">
           Log Out
