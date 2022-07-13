@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import Profile from "./Profile";
 import "./App.css";
 import Login from "./Login/Login";
@@ -44,7 +44,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={<Profile onTattooLike={onTattooLike} />}
+          element={<><NavBar/><Profile user={user} onTattooLike={onTattooLike}/></>}
         />
       </Routes>
     </div>
