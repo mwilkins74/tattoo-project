@@ -9,6 +9,7 @@ import Login from "./Login/Login";
 function App() {
   const [likedList, setLikedList] = useState([]);
 
+
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -18,7 +19,8 @@ function App() {
       }
     });
   }, []);
-  // if (!user) return <Login setUser={user} />;
+
+  if (!user) return <Login setUser={user} />;
 
   return (
     <div className="App">
@@ -55,6 +57,7 @@ function App() {
               />
             </>
           }
+
         />
       </Routes>
     </div>

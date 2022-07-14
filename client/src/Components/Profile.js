@@ -30,6 +30,7 @@ function Profile({ user, likedList, setLikedList }) {
               setLikedList={setLikedList}
             />
           </div>
+
         </div>
       </div>
     </div>
