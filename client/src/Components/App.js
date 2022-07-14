@@ -7,12 +7,10 @@ import "./App.css";
 import Login from "./Login/Login";
 
 function App() {
-  // const [tattoos, setTattoos] = useState([]);
-   const [likedList, setLikedList] = useState([]);
 
-   function onTattooLike(tattoo) {
-     setLikedList([...likedList, tattoo]);
-   }
+  //  function onTattooLike(tattoo) {
+  //    setLikedList([...likedList, tattoo]);
+  //  }
 
   const [user, setUser] = useState({});
 
@@ -23,7 +21,8 @@ function App() {
       }
     });
   }, []);
-  // if (!user) return <Login setUser={user} />;
+
+  if (!user) return <Login setUser={user} />;
 
   return (
     <div className="App">
@@ -44,7 +43,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={<><NavBar/><Profile user={user} onTattooLike={onTattooLike}/></>}
+          element={<><NavBar/><Profile user={user} setUser={user} onTattooLike={onTattooLike}/></>}
         />
       </Routes>
     </div>

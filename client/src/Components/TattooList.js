@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TattooCard from "./TattooCard";
 
 function TattooList({ tattoos }) {
@@ -23,7 +23,10 @@ function TattooList({ tattoos }) {
         return (
           <div className="column">
             {arr.map((tattoo) => {
-              return <TattooCard key={tattoo.id} tattoo={tattoo} />;
+              return <TattooCard
+              key={tattoo.id} 
+              tattoo={tattoo}
+               />;
             })}
           </div>
         );

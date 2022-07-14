@@ -1,6 +1,8 @@
-import React from "react";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import React, {useState} from "react";
+// import { Pressable } from "react-native";
+// import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+
 
 function TattooCard({ tattoo }) {
   // const style = {
@@ -31,9 +33,38 @@ function TattooCard({ tattoo }) {
   // if () {
 
   // }
+  const [liked, setLiked] = useState(false);
+
+  //  function onTattooLike(tattoo) {
+  //    setLiked([...liked, tattoo]);
+  //  }
+
+  //  const LikeButton = () => {
+  //   const liked = useSharedValue(0);
+  
+  //   const outlineStyle = useAnimatedStyle(() => {
+  //     return {
+  //       transform: [
+  //         {
+  //           scale: interpolate(liked.value, [0, 1], [1, 0], Extrapolate.CLAMP),
+  //         },
+  //       ],
+  //     };
+  //   });
+
+  //  const fillStyle = useAnimatedStyle(() => {
+  //   return {
+  //     transform: [{ scale: liked.value }],
+  //     opacity: liked.value,
+  //   };
+  // });
+
   return (
-    <div >
-        <img src={tattoo.image_url} alt="Japanese Tattoo 1" />
+    <div>
+        <img 
+        src={tattoo.image_url} 
+        alt={tattoo.image_url}
+        />
     </div>
   );
 }
