@@ -33,7 +33,6 @@ function LoginForm({ setUser }) {
 
   return (
     <div>
-      {/* <h1>Login</h1> */}
       <form onSubmit={handleSubmit}>
         <label>
           Username

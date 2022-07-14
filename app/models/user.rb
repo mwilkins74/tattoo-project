@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :tattoos
   has_many :styles, through: :tattoos
+  has_many :favorites
   
   # validates :password_lower_case
   # validates :password_uppercase

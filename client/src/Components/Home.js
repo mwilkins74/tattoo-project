@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TattooList from "./TattooList";
 import NavBar from "./NavBar";
-// import Profile from "./Profile";
 
 
 function Home({user, likedList, setLikedList}) {

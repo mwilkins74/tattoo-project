@@ -2,7 +2,6 @@ class FavoritesController < ApplicationController
 
     def index
         render json: Favorite.all
-        # , serializer: FavoriteWithTattooSerializer
     end
 
     def show 
@@ -17,7 +16,6 @@ class FavoritesController < ApplicationController
 
     def create
         favorite = Favorite.create!(favorite_params)
-        # session[:user_id] = user.id
         render json: favorite, status: :created
     end
 
@@ -26,7 +24,14 @@ class FavoritesController < ApplicationController
         favorite.destroy
         head :no_content
     end
-
+    def user_favorites
+        user = User.find(session[:user_id])
+        if user
+            render json: user.favorites
+        else
+            render json: {message: "User not found"}, status: :not_found
+        end
+    end
 
     private
     
