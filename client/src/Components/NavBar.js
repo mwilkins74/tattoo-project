@@ -1,8 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Home from "./Home";
+import { useNavigate } from "react-router-dom";
 
-function NavBar() {
+function NavBar({setUser}) {
+  let navigate = useNavigate();
+
+  function handleLogOut(){
+    fetch("/logout", {method: "DELETE"})
+    .then((r) => {
+        if (r.ok) {
+            setUser(null)
+            navigate("/")
+        }
+    }
+    )
+} 
   return (
     <div>
       <div class="navbar-toggler">
@@ -19,8 +31,8 @@ function NavBar() {
                 </Link>
                 <div >
                   <div class="nav-item">
-                    <Link to="/" class="nav-link" >
-                      Log Out
+                    <Link to="/" class="nav-link" onClick={handleLogOut}>
+                      Log-Out
                     </Link>
                   </div>
                 </div>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import TattooList from "./TattooList";
+import { useNavigate } from "react-router-dom";
+
 
 function Profile({ user, likedList, setLikedList }) {
     const [tattoos, setTattoos] = useState([]);
+    let navigate = useNavigate();
   
     useEffect(() => {
       fetch("/tattoos")
@@ -53,7 +56,7 @@ function Profile({ user, likedList, setLikedList }) {
             <br/>
             <form input="text" onChange={handleChangeProfilePic}> Change profile pic</form>
             <h2 className="favorites-container">Favorite Tattoos</h2>
-                <ul>{onTattooLike}</ul>
+                {/* <ul>{onTattooLike}</ul> */}
                 <div>
             <div className="row">
             <div className="column">
