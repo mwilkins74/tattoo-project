@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap"); */
 
 body {
   margin: 0;
@@ -16,10 +16,8 @@ body {
 }
 
 .logo {
-  /* width: auto */
-  /* height: auto */
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   text-align: center;
 }
 
@@ -90,65 +88,12 @@ code {
   }
 }
 
-/* Like Button */
+.images {
+  width: auto;
+  height: auto 
+}
 
-.heart-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.content{
-  padding: 13px 16px;
-  display: flex;
-  border: 2px solid #eae2e1;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.content.heart-active{
-  border-color: #f9b9c4;
-  background: #fbd0d8;
-}
-.heart{
-  position: absolute;
-  background-position: left;
-  background-size: 2900%;
-  height: 90px;
-  width: 90px;
-  top: 50%;
-  left: 21%;
-  transform: translate(-50%,-50%);
-}
-.text{
-  font-size: 21px;
-  margin-left: 30px;
-  color: grey;
-  font-family: 'Montserrat',sans-serif;
-}
-.numb:before{
-  content: '12';
-  font-size: 21px;
-  margin-left: 7px;
-  font-weight: 600;
-  color: #9C9496;
-  font-family: sans-serif;
-}
-.numb.heart-active:before{
-  content: '13';
-  color: #000;
-}
-.text.heart-active{
-  color: #000;
-}
-.heart.heart-active{
-  animation: animate .8s steps(28) 1;
-  background-position: right;
-}
-@keyframes animate {
-  0%{
-    background-position: left;
-  }
-  100%{
-    background-position: right;
-  }
+.nav-link {
+  color: black;
+  font-weight: bold;
 }

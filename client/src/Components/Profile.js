@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Profile({ user, onTattooLike }) {
     let navigate = useNavigate();
-
    
     // function FilterTattoos(){
 

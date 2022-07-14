@@ -1,5 +1,6 @@
 import React from "react";
 import TattooCard from "./TattooCard";
+// import Button from 'react-bootstrap/Button'
 
 function TattooList({ tattoos }) {
 
@@ -12,21 +13,18 @@ function TattooList({ tattoos }) {
     }
     return response;
   }
-  let equalArray = sliceTattoos(tattoos, 10);
+
+  let equalArray = sliceTattoos(tattoos, 14);
   // console.log(tattoos);
   return (
-    // tattoos.map((tattoo) => {
-    //   return <TattooCard key={tattoo.id} tattoo={tattoo} />;
-    // })
     <div className="row">
       {equalArray.map((arr) => {
         return (
           <div className="column">
             {arr.map((tattoo) => {
-              return <TattooCard
-              key={tattoo.id} 
-              tattoo={tattoo}
-               />;
+              return (
+                <TattooCard key={tattoo.id} tattoo={tattoo} />
+              );
             })}
           </div>
         );
