@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import TattooCard from "./TattooCard";
-// import Button from 'react-bootstrap/Button'
 
-function TattooList({ tattoos }) {
+function TattooList({ tattoos, likedList, setLikedList }) {
 
-  // const theTattoos = { tattoos };
   function sliceTattoos(theTattoos, chunkSize) {
     const response = [];
     for (let i = 0; i < theTattoos.length; i += chunkSize) {
@@ -23,7 +21,12 @@ function TattooList({ tattoos }) {
           <div className="column">
             {arr.map((tattoo) => {
               return (
-                <TattooCard key={tattoo.id} tattoo={tattoo} />
+                <TattooCard
+                  key={tattoo.id}
+                  tattoo={tattoo}
+                  likedList={likedList}
+                  setLikedList={setLikedList}
+                />
               );
             })}
           </div>

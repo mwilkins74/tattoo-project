@@ -1,12 +1,21 @@
-import React from "react";
-// import Button from "react-bootstrap/Button";
-// import Overlay from "react-bootstrap/Overlay"
+import React, {useState} from "react";
 
-function TattooCard({ tattoo }) {
-  
+function TattooCard({ tattoo, likedList, setLikedList }) {
+  const [liked, setLiked] = useState(false);
+
+  function handleLike(tattoo) {
+    console.log("Im liking");
+    setLikedList([...likedList, tattoo]);
+    setLiked(liked);
+  }
+
   return (
-    <div>
-        <img src={tattoo.image_url} alt="Japanese Tattoo 1" className="images" />
+    <div onClick={handleLike}>
+      <img
+        src={tattoo.image_url}
+        alt=""
+        className="images"
+      />
     </div>
   );
 }
