@@ -3,6 +3,18 @@ import { Link } from "react-router-dom";
 // import Home from "./Home";
 
 function NavBar() {
+  
+    let navigate = useNavigate();
+
+    function handleLogOut() {
+      fetch("/logout", { method: "DELETE" }).then((r) => {
+        if (r.ok) {
+          setUser(null);
+          navigate("/");
+        }
+      });
+  } 
+  
   return (
     <div>
       <div class="navbar-toggler">
@@ -19,7 +31,7 @@ function NavBar() {
                 </Link>
                 <div >
                   <div class="nav-item">
-                    <Link to="/" class="nav-link" >
+                    <Link to="/" class="nav-link" onClick={handleLogOut} >
                       Log Out
                     </Link>
                   </div>
