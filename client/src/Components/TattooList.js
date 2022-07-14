@@ -14,7 +14,7 @@ function TattooList({ tattoos }) {
     return response;
   }
 
-  let equalArray = sliceTattoos(tattoos, 14);
+  let equalArray = sliceTattoos(tattoos, 8);
   // console.log(tattoos);
   return (
     <div className="row">

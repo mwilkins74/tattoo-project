@@ -39,11 +39,11 @@ function App() {
         <Route exact path="/" element={<Login setUser={user} />} />
         <Route
           path="/home"
-          element={<Home user={user} onTattooLike={onTattooLike} />}
+          element={<Home user={user} />}
         />
         <Route
           path="/profile"
-          element={<><NavBar/><Profile user={user} setUser={user} onTattooLike={onTattooLike}/></>}
+          element={<><NavBar/><Profile user={user} setUser={user} /></>}
         />
       </Routes>
     </div>
