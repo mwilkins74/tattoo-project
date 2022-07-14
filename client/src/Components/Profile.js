@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from "react";
 import TattooList from "./TattooList";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+
 
 function Profile({ user, likedList, setLikedList }) {
-  const [tattoos, setTattoos] = useState([]);
-  let navigate = useNavigate()
+    const [tattoos, setTattoos] = useState([]);
+    let navigate = useNavigate();
+  
+    useEffect(() => {
+      fetch("/tattoos")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setTattoos(data);
+        });
+    }, []);
 
   useEffect(() => {
     fetch("/favorites")
