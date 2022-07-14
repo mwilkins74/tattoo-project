@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TattooList from "./TattooList";
+import TattooListFavorite from "./TattooListFavorite";
 import { useNavigate } from "react-router-dom";
 
 function Profile({ user, likedList, setLikedList }) {
@@ -63,7 +63,7 @@ function Profile({ user, likedList, setLikedList }) {
       <div>
         <div className="row">
           <div className="column">
-            <TattooList
+            <TattooListFavorite
               tattoos={tattoos}
               likedList={likedList}
               setLikedList={setLikedList}
