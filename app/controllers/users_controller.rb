@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(session[:user_id])  
-    render json: user, serializer: UserWithTattoosSerializer
+    render json: user
   end
 
   def update
