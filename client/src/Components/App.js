@@ -7,10 +7,8 @@ import "./App.css";
 import Login from "./Login/Login";
 
 function App() {
+  const [likedList, setLikedList] = useState([]);
 
-  //  function onTattooLike(tattoo) {
-  //    setLikedList([...likedList, tattoo]);
-  //  }
 
   const [user, setUser] = useState({});
 
@@ -39,11 +37,26 @@ function App() {
         <Route exact path="/" element={<Login setUser={user} />} />
         <Route
           path="/home"
-          element={<Home user={user} />}
+          element={
+            <Home
+              user={user}
+              likedList={likedList}
+              setLikedList={setLikedList}
+            />
+          }
         />
         <Route
           path="/profile"
-          element={<><NavBar/><Profile user={user} setUser={user} /></>}
+          element={
+            <>
+              <NavBar />
+              <Profile
+                user={user}
+                likedList={likedList}
+                setLikedList={setLikedList}
+              />
+            </>
+          }
         />
       </Routes>
     </div>

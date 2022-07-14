@@ -1,6 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-// import TattooCard from './TattooCard';
+import React, { useState, useEffect } from "react";
+import TattooList from "./TattooList";
 
 function Profile({ user, likedList, setLikedList }) {
     const [tattoos, setTattoos] = useState([]);
@@ -83,4 +82,4 @@ function Profile({ user, likedList, setLikedList }) {
     </div>
 )}
 
-export default Profile;;
+export default Profile;
