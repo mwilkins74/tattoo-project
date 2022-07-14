@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,6 +14,7 @@ function NavBar({ setUser }) {
           navigate("/")
         }
       })
+    }  
       
     return (
       <div>
@@ -44,6 +44,6 @@ function NavBar({ setUser }) {
       </div>
     );
   }
-}
+
 
 export default NavBar;
