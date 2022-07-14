@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
-  patch "/user/:id", to: "users#update"
+  patch `/user/#{user.profile_img}`, to: "users#update"
   delete "/user/:id", to: "users#destroy"
 
   post "/login", to: "sessions#create"
