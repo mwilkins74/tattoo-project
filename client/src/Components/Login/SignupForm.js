@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignupForm({ setUser }) {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ function SignupForm({ setUser }) {
     const [errors, setErrors] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-    const { id } = useParams()
+    // const { id } = useParams()
 
     function handleSubmitSignUp(e) {
         e.preventDefault();
