@@ -1,10 +1,31 @@
 import React, {useState} from "react";
 
-function TattooCard({ tattoo, likedList, setLikedList }) {
+function TattooCard({ id, src, user, tattoo, likedList, setLikedList }) {
   const [liked, setLiked] = useState(false);
-
-  function handleLike(tattoo) {
-    console.log("Im liking");
+// console.log(tattoo)
+  function handleLike() {
+    console.log(user.id)
+    console.log(id)
+    console.log(user.username)
+    fetch("/favorites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_id: user.id,
+        tattoo_id: id,
+        label: user.username
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => console.error(err));
+  
+    // let tattoo = tattoo.id
+    // console.log("Im liking");
     setLikedList([...likedList, tattoo]);
     setLiked(liked);
   }
@@ -12,7 +33,7 @@ function TattooCard({ tattoo, likedList, setLikedList }) {
   return (
     <div onClick={handleLike}>
       <img
-        src={tattoo.image_url}
+        src={src}
         alt=""
         className="images"
       />

@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 // import Profile from "./Profile";
 
 
-function Home({likedList, setLikedList}) {
+function Home({user, likedList, setLikedList}) {
  const [tattoos, setTattoos] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ function Home({likedList, setLikedList}) {
     <div>
       <NavBar />
       <TattooList
+        user={user}
         tattoos={tattoos}
         setTattoos={setTattoos}
         likedList={likedList}

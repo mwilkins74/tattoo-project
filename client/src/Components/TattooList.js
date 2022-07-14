@@ -1,7 +1,7 @@
 import React from "react";
 import TattooCard from "./TattooCard";
 
-function TattooList({ tattoos, likedList, setLikedList }) {
+function TattooList({ user, tattoos, likedList, setLikedList }) {
 
   function sliceTattoos(theTattoos, chunkSize) {
     const response = [];
@@ -12,8 +12,8 @@ function TattooList({ tattoos, likedList, setLikedList }) {
     return response;
   }
 
-  let equalArray = sliceTattoos(tattoos, 8);
-  // console.log(tattoos);
+  let equalArray = sliceTattoos(tattoos, 9);
+  console.log(tattoos);
   return (
     <div className="row">
       {equalArray.map((arr) => {
@@ -21,9 +21,11 @@ function TattooList({ tattoos, likedList, setLikedList }) {
           <div className="column">
             {arr.map((tattoo) => {
               return (
-                <TattooCard
+                <TattooCard 
+                  user={user}
                   key={tattoo.id}
-                  tattoo={tattoo}
+                  id={tattoo.id}
+                  src={tattoo.image_url}
                   likedList={likedList}
                   setLikedList={setLikedList}
                 />
