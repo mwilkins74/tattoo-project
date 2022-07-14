@@ -9,7 +9,6 @@ import Login from "./Login/Login";
 function App() {
   const [likedList, setLikedList] = useState([]);
 
-
   const [user, setUser] = useState({});
 
   useEffect(() => {
