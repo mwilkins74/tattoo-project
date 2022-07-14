@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Miltonian+Tattoo&display=swap"); */
 
 body {
   margin: 0;
@@ -16,10 +16,8 @@ body {
 }
 
 .logo {
-  /* width: auto */
-  /* height: auto */
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   text-align: center;
 }
 
@@ -95,4 +93,14 @@ code {
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.images {
+  width: auto;
+  height: auto 
+}
+
+.nav-link {
+  color: black;
+  font-weight: bold;
 }

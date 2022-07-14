@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Profile({ user, onTattooLike}) {
+function Profile({ user, onTattooLike }) {
+    
    
 
     return (
