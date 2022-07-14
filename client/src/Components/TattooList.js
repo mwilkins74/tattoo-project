@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TattooCard from "./TattooCard";
 // import Button from 'react-bootstrap/Button'
 
