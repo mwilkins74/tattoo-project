@@ -19,7 +19,7 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login setUser={user} />;
+  // if (!user) return <Login setUser={user} />;
 
   return (
     <div className="App">
@@ -54,7 +54,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <NavBar />
+              <NavBar setUser={setUser} user={user}/>
               <Profile
                 user={user}
                 likedList={likedList}

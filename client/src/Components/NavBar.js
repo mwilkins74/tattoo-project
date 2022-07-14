@@ -1,8 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
 
-function NavBar({ setUser }) {
+import { useNavigate } from "react-router-dom";
+
+
+function NavBar({setUser}) {
+  let navigate = useNavigate();
+
+  function handleLogOut(){
+    fetch("/logout", {method: "DELETE"})
+    .then((r) => {
+        if (r.ok) {
+            setUser(null)
+            navigate("/")
+        }
+    }
+    )
+} 
+
+function NavBar() {
+  
 
     let navigate = useNavigate();
 
@@ -15,6 +32,8 @@ function NavBar({ setUser }) {
       });
   } 
   
+
+
   return (
     <div>
       <div class="navbar-toggler">
@@ -31,8 +50,14 @@ function NavBar({ setUser }) {
                 </Link>
                 <div >
                   <div class="nav-item">
+
                     <Link to="/" class="nav-link" onClick={handleLogOut}>
+                      Log-Out
+
+                    <Link to="/" class="nav-link" onClick={handleLogOut} >
+
                       Log Out
+
                     </Link>
                   </div>
                 </div>

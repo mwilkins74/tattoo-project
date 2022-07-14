@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import TattooListFavorite from "./TattooListFavorite";
 import { useNavigate } from "react-router-dom";
 
 function Profile({ user, likedList, setLikedList }) {
   const [tattoos, setTattoos] = useState([]);
   let navigate = useNavigate();
+
 
   useEffect(() => {
     fetch("/my-favorites")
