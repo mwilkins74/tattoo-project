@@ -20,9 +20,10 @@ class FavoritesController < ApplicationController
     end
 
     def destroy
-        favorite = Favorite.find(session[:user_id])
+        favorite = Favorite.find_by(params[:tattoo_id])
         favorite.destroy
-        head :no_content
+        render json: favorite
+
     end
 
     def user_favorites_destroy
