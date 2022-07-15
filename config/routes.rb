@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   
   resources :styles, only: [:index, :show]
   resources :tattoos, only: [:show] #maybe create if we don't get away with it
-  # resources :users, only: [:show, :update]
+  resources :users, only: [:create, :update]
   resources :favorites
   
 
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
-  # patch `/user/:id`, to: "users#update"
+  patch '/user/:id', to: "users#update"
   delete "/user/:id", to: "users#destroy"
 
   post "/login", to: "sessions#create"
