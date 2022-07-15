@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :tattoos
+  has_many :favorites
   has_many :styles, through: :tattoos
   has_many :favorites
   

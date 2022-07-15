@@ -31,6 +31,8 @@ function Profile({ user, likedList, setLikedList }) {
       });
   }, []);
 
+  //DELETE FUNCTION FOR ACCOUNT
+
   function handleDelete() {
     fetch(`/user/${user.id}`, {
       method: "DELETE",

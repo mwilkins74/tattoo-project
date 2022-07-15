@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get '/tattoos', to: "tattoos#index"
   get '/my-favorites', to: "favorites#user_favorites"
+  delete '/my-favorites", to: "favorites#user_destroy"'
+
 
   delete '/delete-favorites', to: "favorites#destroy"
 
