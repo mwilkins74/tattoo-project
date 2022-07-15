@@ -32,29 +32,31 @@ function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-        </label>
-        <br />
-        <label>
-          Password
-          <input
-            type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-        </label>
-        <button type="submit">{isLoading ? "Loading..." : "Login"}</button>
-        {errors.map((err) => (
-          <alert key={err}>"Invalid information"</alert>
-        ))}
+    <div className="Auth-form-container">
+      <form onSubmit={handleSubmit} className="Auth-form">
+        <div className="Auth-form-content">
+          <label>
+            Username
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+          </label>
+          <br />
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+          </label>
+          <button type="submit">{isLoading ? "Loading..." : "Login"}</button>
+          {errors.map((err) => (
+            <alert key={err}>"Invalid information"</alert>
+          ))}
+        </div>
       </form>
     </div>
   );

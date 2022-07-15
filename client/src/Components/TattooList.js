@@ -12,28 +12,30 @@ function TattooList({ user, tattoos, likedList, setLikedList }) {
     return response;
   }
 
-  let equalArray = sliceTattoos(tattoos, 9);
+  let equalArray = sliceTattoos(tattoos, 14);
   console.log(tattoos);
   return (
-    <div className="row">
-      {equalArray.map((arr) => {
-        return (
-          <div className="column">
-            {arr.map((tattoo) => {
-              return (
-                <TattooCard 
-                  user={user}
-                  key={tattoo.id}
-                  id={tattoo.id}
-                  src={tattoo.image_url}
-                  likedList={likedList}
-                  setLikedList={setLikedList}
-                />
-              );
-            })}
-          </div>
-        );
-      })}
+    <div className="faves">
+      <div className="row">
+        {equalArray.map((arr) => {
+          return (
+            <div className="column">
+              {arr.map((tattoo) => {
+                return (
+                  <TattooCard
+                    user={user}
+                    key={tattoo.id}
+                    id={tattoo.id}
+                    src={tattoo.image_url}
+                    likedList={likedList}
+                    setLikedList={setLikedList}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

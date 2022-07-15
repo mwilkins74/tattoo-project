@@ -2,11 +2,10 @@ import React, {useState} from "react";
 
 function TattooCard({ id, src, user, tattoo, likedList, setLikedList }) {
   const [liked, setLiked] = useState(false);
-// console.log(tattoo)
   function handleLike() {
-    console.log(user.id)
-    console.log(id)
-    console.log(user.username)
+    // console.log(user.id)
+    // console.log(id)
+    // console.log(user.username)
     fetch("/favorites", {
       method: "POST",
       headers: {
