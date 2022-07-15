@@ -11,23 +11,40 @@ function TattooListFavorite({ user, tattoos, likedList, setLikedList }) {
     return response;
   }
 
-  let equalArray = sliceTattoos(tattoos, 3);
-  console.log(tattoos);
+  function handleDelete() {
+    fetch("/delete-favorites", {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((tattoo) => {
+          setLikedList(tattoo);
+        });
+      } else {
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
+  }
+
+  let equalArray = sliceTattoos(tattoos, 4);
+  // console.log(tattoos);
   return (
-    <div className="row">
+    <div>
       {equalArray.map((arr) => {
         return (
-          <div className="column">
+          <div>
             {arr.map((tattoo) => {
               return (
-                <TattooCard
-                  user={user}
-                  key={tattoo.tattoo.id}
-                  id={tattoo.tattoo.id}
-                  src={tattoo.tattoo.image_url}
-                  likedList={likedList}
-                  setLikedList={setLikedList}
-                />
+                <div className="faves">
+                  <TattooCard
+                    user={user}
+                    key={tattoo.tattoo.id}
+                    id={tattoo.tattoo.id}
+                    src={tattoo.tattoo.image_url}
+                    likedList={likedList}
+                    setLikedList={setLikedList}
+                    onClick={handleDelete}
+                  />
+                </div>
               );
             })}
           </div>

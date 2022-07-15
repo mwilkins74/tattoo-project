@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
-
+import ProfileImageForm from "./ProfileImageForm";
 import TattooListFavorite from "./TattooListFavorite";
 import { useNavigate } from "react-router-dom";
 
 function Profile({ user, likedList, setLikedList }) {
   const [tattoos, setTattoos] = useState([]);
+  const [showForm, setShowForm] = useState(true);
+  const [profileImage, setProfileImage] = useState([])
+  // const [user, setUser] = useState("");
+
   let navigate = useNavigate();
 
+  // console.log(user.username)
+
+  // useEffect(() => {
+  //   fetch("/profile")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setTattoos(data);
+  //     });
+  // }, [profileImage]);
 
   useEffect(() => {
     fetch("/my-favorites")
@@ -32,18 +46,13 @@ function Profile({ user, likedList, setLikedList }) {
     });
   }
 
-  function handleChangeProfilePic() {
-    fetch(`/user/${user.image_url}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        image_url: "",
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        return res;
-      })
-      .catch((err) => console.error(err));
+  function handleForm(e) {
+    setShowForm(!showForm);
+    console.log(e.target, "hide");
+  }
+
+  function newProfileImage(newProfileImage) {
+    setProfileImage([...profileImage, newProfileImage]);
   }
 
   return (
@@ -56,10 +65,12 @@ function Profile({ user, likedList, setLikedList }) {
         alt={user.profile_img}
       />
       <br />
-      <form input="text" onChange={handleChangeProfilePic}>
-        {" "}
-        Change profile pic
-      </form>
+
+      <button onClick={handleForm}>
+        {showForm ? "Hide Form " : "Change Profile Picture"}
+      </button>
+      {showForm ? <ProfileImageForm user={user} newProfileImage={newProfileImage} /> : null}
+
       <h2 className="favorites-container">Favorite Tattoos</h2>
       {/* <ul>{onTattooLike}</ul> */}
       <div>

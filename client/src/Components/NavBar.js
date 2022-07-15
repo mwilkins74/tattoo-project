@@ -33,7 +33,7 @@ function NavBar({ setUser }) {
                 <div >
                   <div class="nav-item">
                     <Link to="/" class="nav-link" onClick={handleLogOut}>
-                      Log-Out
+                      Sign Out
                     </Link>
                   </div>
                 </div>
