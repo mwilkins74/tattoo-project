@@ -37,6 +37,7 @@ function TattooListFavorite({ user, tattoos, likedList, setLikedList, setTattoos
   
   let equalArray = sliceTattoos(tattoos, 3);
   console.log(tattoos);
+
   return (
     <div>
       {equalArray.map((arr) => {

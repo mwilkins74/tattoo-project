@@ -19,8 +19,6 @@ function App() {
     });
   }, []);
 
-  // if (!user) return <Login setUser={user} />;
-
   return (
     <div className="App">
       <div>

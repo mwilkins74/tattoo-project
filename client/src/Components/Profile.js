@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-
+import ProfileImageForm from "./ProfileImageForm";
 import TattooListFavorite from "./TattooListFavorite";
 import { useNavigate } from "react-router-dom";
 
 function Profile({ user, likedList, setLikedList }) {
   const [tattoos, setTattoos] = useState([]);
+  const [showForm, setShowForm] = useState(true);
+  const [profileImage, setProfileImage] = useState([])
+  // const [user, setUser] = useState("");
+
   let navigate = useNavigate();
 
-  //render favorites
   useEffect(() => {
     fetch("/my-favorites")
       .then((response) => response.json())
@@ -39,6 +42,14 @@ function Profile({ user, likedList, setLikedList }) {
     });
   }
 
+  function handleForm(e) {
+    setShowForm(!showForm);
+    console.log(e.target, "hide");
+  }
+
+  function newProfileImage(newProfileImage) {
+    setProfileImage([...profileImage, newProfileImage]);
+  }
 
   console.log(tattoos)
   return (
@@ -51,10 +62,13 @@ function Profile({ user, likedList, setLikedList }) {
         alt={user.profile_img}
       />
       <br />
-      {/* <button input="text" onChange={handleChangeProfilePic}>
-        {" "}
-        Add new Profile Pic
-      </button> */}
+
+
+      <button onClick={handleForm}>
+        {showForm ? "Hide Form " : "Change Profile Picture"}
+      </button>
+      {showForm ? <ProfileImageForm user={user} newProfileImage={newProfileImage} /> : null}
+
       <h2 className="favorites-container">Favorite Tattoos</h2>
       {/* <ul>{onTattooLike}</ul> */}
       <div>

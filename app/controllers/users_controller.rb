@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	  skip_before_action :authorize, only: [:create]
+	  skip_before_action :authorize, only: [:create, :update]
 
   def create
     user = User.create!(user_params)
@@ -13,15 +13,21 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = user.update!(user_params)
-    render json: user, status: :accepted
+    user = User.find(params[:id])  
+     user.update!(user_params)
+     render json: user
   end
 
-  def destroy 
-    user = User.find(session[:user_id])
-    user.destroy
-    head :no_content
-  end
+  # def update_image
+  #   user = @user.update!(user_params)
+  #   render json: user.profile_img, status: :accepted
+  # end
+
+  # def destroy 
+  #   user = User.find(session[:user_id])
+  #   user.destroy
+  #   head :no_content
+  # end
 
   private
 

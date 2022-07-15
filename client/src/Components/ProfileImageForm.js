@@ -1,39 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState } from "react";
 
 function ProfileImageForm({ user, newProfileImage }) {
   const [url, setUrl] = useState("");
+  // const [profileImg, setProfileImg] = useState("")
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const newImage = { url };
-    handlePost(newImage);
-  }
+  // useEffect(() => {
+  //   fetch(`/users/${user.id}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setUrl(data);
+  //     });
+  // }, [setUrl]);
 
-  function handlePost() {
-    console.log(user);
-    console.log(user.id);
-    fetch(`/user/${user.id}`, {
+  function handleSubmit(url) {
+    fetch(`/users/${user.id}`, {
       method: "PATCH",
-      body: JSON.stringify({
-        profile_img: "" ,
-      }),
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ profile_img: url }),
     })
-      .then((res) => res.json())
-      .then((newImage) => {
-        return newImage;
-      })
-      .catch((err) => console.error(err));
+      .then((r) => r.json())
+      .then((data) => newProfileImage(data));
   }
 
   function handleUrlChange(e) {
-    setUrl(newProfileImage);
+    setUrl(e.target.value);
+    // console.log(url);
   }
 
   return (
-    <form input="text" onSubmit={handleSubmit}>
+    <form input="text">
       <input placeholder="Image URL" onChange={handleUrlChange} value={url} />
-      <input type="submit" />
-      Change profile pic
+      <button onClick={() => { handleSubmit(url) }}>Change</button>
     </form>
   );
 }

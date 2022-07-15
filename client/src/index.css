@@ -53,8 +53,12 @@ code {
   top: 0;
 }
 
+.nav-link {
+  color: black;
+  font-weight: bold;
+}
 
-/* Image Gallery */
+/* Home Screen Image Gallery */
 .row {
   justify-content: center;
   display: flex;
@@ -93,7 +97,43 @@ code {
   height: auto 
 }
 
-.nav-link {
-  color: black;
-  font-weight: bold;
+
+/* Profile Image Gallery */
+
+.row-fave{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column-fave {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column-fave img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .column-fave {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column-fave {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.images {
+  width: auto;
+  height: auto 
 }
