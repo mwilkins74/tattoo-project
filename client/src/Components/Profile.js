@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Profile({ user, likedList, setLikedList }) {
   const [tattoos, setTattoos] = useState([]);
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const [profileImage, setProfileImage] = useState([])
   // const [user, setUser] = useState("");
 
