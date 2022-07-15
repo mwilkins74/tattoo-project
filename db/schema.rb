@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2022_07_14_185011) do
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tattoo_id"
-    t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

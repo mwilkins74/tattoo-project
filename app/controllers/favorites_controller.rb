@@ -17,7 +17,6 @@ class FavoritesController < ApplicationController
 
     def create
         favorite = Favorite.create!(favorite_params)
-        # session[:user_id] = user.id
         render json: favorite, status: :created
     end
 
@@ -31,7 +30,7 @@ class FavoritesController < ApplicationController
     private
     
     def favorite_params
-        params.permit(:user_id, :tattoo_id, :label)
+        params.permit(:user_id, :tattoo_id)
     end
 
     def find_favorite
