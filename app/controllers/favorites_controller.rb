@@ -20,19 +20,20 @@ class FavoritesController < ApplicationController
     end
 
     def destroy
-        favorite = Favorite.find(session[:user_id])
+        favorite = Favorite.find_by(params[:tattoo_id])
         favorite.destroy
-        head :no_content
+        render json: favorite
     end
-    # def user_favorites_destroy
-    #     user = User.find(session[:user_id])
-    #     if user
-    #         tattoos = user.favorites
-    #         tattoos.destroy
-    #     else
-    #         render json: {message: "Tattoo not found"}, status: :not_found
-    #     end
-    # end
+
+    def user_favorites_destroy
+        user = User.find(session[:user_id])
+        if user
+            tattoos = user.favorites
+            tattoos.destroy
+        else
+            render json: {message: "Tattoo not found"}, status: :not_found
+        end
+    end
     
     def user_favorites
         user = User.find(session[:user_id])

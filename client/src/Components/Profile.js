@@ -7,7 +7,7 @@ function Profile({ user, likedList, setLikedList }) {
   const [tattoos, setTattoos] = useState([]);
   let navigate = useNavigate();
 
-
+  //render favorites
   useEffect(() => {
     fetch("/my-favorites")
       .then((response) => response.json())
@@ -17,9 +17,14 @@ function Profile({ user, likedList, setLikedList }) {
       });
   }, []);
 
+  //Delete function for tattoos
+
+  
+
+
   //DELETE FUNCTION FOR ACCOUNT
 
-  function handleDelete() {
+  function handleDelete(user) {
     fetch(`/user/${user.id}`, {
       method: "DELETE",
     }).then((r) => {
@@ -34,20 +39,8 @@ function Profile({ user, likedList, setLikedList }) {
     });
   }
 
-  function handleChangeProfilePic() {
-    fetch(`/user/${user.image_url}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        image_url: "",
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        return res;
-      })
-      .catch((err) => console.error(err));
-  }
 
+  console.log(tattoos)
   return (
     <div>
       <h1 className="header-h1">Profile Page</h1>
@@ -58,10 +51,10 @@ function Profile({ user, likedList, setLikedList }) {
         alt={user.profile_img}
       />
       <br />
-      <form input="text" onChange={handleChangeProfilePic}>
+      {/* <button input="text" onChange={handleChangeProfilePic}>
         {" "}
-        Change profile pic
-      </form>
+        Add new Profile Pic
+      </button> */}
       <h2 className="favorites-container">Favorite Tattoos</h2>
       {/* <ul>{onTattooLike}</ul> */}
       <div>
@@ -71,6 +64,7 @@ function Profile({ user, likedList, setLikedList }) {
               tattoos={tattoos}
               likedList={likedList}
               setLikedList={setLikedList}
+              setTattoos={setTattoos}
             />
           </div>
         </div>
@@ -83,7 +77,7 @@ function Profile({ user, likedList, setLikedList }) {
         <br />
         <br />
         <h2>Delete your Account</h2>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={() => handleDelete(user)}>Delete</button>
         <br />
         <br />
         <br />
