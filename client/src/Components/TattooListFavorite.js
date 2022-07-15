@@ -11,6 +11,20 @@ function TattooListFavorite({ user, tattoos, likedList, setLikedList }) {
     return response;
   }
 
+  function handleDelete(){
+      fetch('/my-favorites', {
+        method: "DELETE",
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((tattoo) => {
+           setLikedList(tattoo);
+          });
+        } else {
+          r.json().then((err) => console.log(err.errors));
+        }
+      });
+    }
+
   let equalArray = sliceTattoos(tattoos, 3);
   console.log(tattoos);
   return (
@@ -27,6 +41,7 @@ function TattooListFavorite({ user, tattoos, likedList, setLikedList }) {
                   src={tattoo.tattoo.image_url}
                   likedList={likedList}
                   setLikedList={setLikedList}
+                  onClick={handleDelete}
                 />
               );
             })}
