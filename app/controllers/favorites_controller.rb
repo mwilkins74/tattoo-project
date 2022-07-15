@@ -23,7 +23,6 @@ class FavoritesController < ApplicationController
         favorite = Favorite.find_by(params[:tattoo_id])
         favorite.destroy
         render json: favorite
-
     end
 
     def user_favorites_destroy
@@ -35,7 +34,7 @@ class FavoritesController < ApplicationController
             render json: {message: "Tattoo not found"}, status: :not_found
         end
     end
-
+    
     def user_favorites
         user = User.find(session[:user_id])
         if user
@@ -48,7 +47,7 @@ class FavoritesController < ApplicationController
     private
     
     def favorite_params
-        params.permit(:user_id, :tattoo_id, :label)
+        params.permit(:user_id, :tattoo_id)
     end
 
     def find_favorite
