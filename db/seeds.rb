@@ -19,7 +19,6 @@ Style.create!(style: "Sleeves")
 Style.create!(style: "Abstract")
 Style.create!(style: "Blackout")
 
-
 # Japanese
 Tattoo.create!(user_id: 1, style_id: 1, image_url: "https://dcassetcdn.com/design_img/3961884/807976/26834609/cwd67c86rh9kesy4df26xw7fem_thumbnail.png")
 Tattoo.create!(user_id: 1, style_id: 1, image_url: "https://us.123rf.com/450wm/insima/insima2005/insima200500003/148797794-koi-carp-swimming-upstream-japanese-gold-fish-with-water-waves-tattoo-black-and-white-vector-illustr.jpg?ver=6")

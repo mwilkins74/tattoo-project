@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
-import TattooList from "./TattooList";
+
+import TattooListFavorite from "./TattooListFavorite";
 import { useNavigate } from "react-router-dom";
 
-
 function Profile({ user, likedList, setLikedList }) {
-    const [tattoos, setTattoos] = useState([]);
-    let navigate = useNavigate();
-  
-    useEffect(() => {
-      fetch("/tattoos")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          setTattoos(data);
-        });
-    }, []);
+  const [tattoos, setTattoos] = useState([]);
+  let navigate = useNavigate();
+
 
   useEffect(() => {
-    fetch("/favorites")
+    fetch("/my-favorites")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -73,7 +65,7 @@ function Profile({ user, likedList, setLikedList }) {
       <div>
         <div className="row">
           <div className="column">
-            <TattooList
+            <TattooListFavorite
               tattoos={tattoos}
               likedList={likedList}
               setLikedList={setLikedList}

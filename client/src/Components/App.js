@@ -33,7 +33,13 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route exact path="/" element={<Login setUser={user} />} />
+        <Route
+          exact path="/"
+          element={
+            <Login setUser={user}
+            />
+          }
+        />
         <Route
           path="/home"
           element={
