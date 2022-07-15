@@ -92,7 +92,7 @@ Tattoo.create!(user_id: 1, style_id: 9, image_url:  "https://encrypted-tbn0.gsta
 Tattoo.create!(user_id: 1, style_id: 9, image_url:  "https://kickassthings.com/wp-content/uploads/2018/08/blackout-tattoos-ideas-27.jpg")
 Tattoo.create!(user_id: 1, style_id: 9, image_url:  "https://cdn.99images.com/photos/tattoos/best-tattoos/black-rose-wrist-tattoo-design-UZ4EU.jpg")
 
-Favorite.create!(user_id: 1, tattoo_id: 1, label: "Cool Tattoo bro!")
+Favorite.create!(user_id: 1, tattoo_id: 1)
 
 
 puts "Done tattooing!"

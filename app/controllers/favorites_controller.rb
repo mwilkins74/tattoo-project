@@ -36,7 +36,7 @@ class FavoritesController < ApplicationController
     private
     
     def favorite_params
-        params.permit(:user_id, :tattoo_id, :label)
+        params.permit(:user_id, :tattoo_id)
     end
 
     def find_favorite
