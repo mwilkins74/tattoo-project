@@ -27,7 +27,7 @@ function Profile({ user, likedList, setLikedList }) {
 
   //DELETE FUNCTION FOR ACCOUNT
 
-  function handleDelete(user) {
+  function handleDelete() {
     fetch(`/user/${user.id}`, {
       method: "DELETE",
     }).then((r) => {

@@ -19,12 +19,6 @@ class FavoritesController < ApplicationController
         render json: favorite, status: :created
     end
 
-    def destroy
-        favorite = Favorite.find_by(params[:tattoo_id])
-        favorite.destroy
-        render json: favorite
-    end
-
     def user_favorites_destroy
         user = User.find(session[:user_id])
         if user

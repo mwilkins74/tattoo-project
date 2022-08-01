@@ -3,7 +3,7 @@ import TattooList from "./TattooList";
 import NavBar from "./NavBar";
 
 
-function Home({user, likedList, setLikedList}) {
+function Home({user, likedList, setLikedList}) 
  const [tattoos, setTattoos] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function Home({user, likedList, setLikedList}) {
         console.log(data);
         setTattoos(data);
       });
-  }, []);
+  // }, [])
 
   return (
     <div>
@@ -28,5 +28,6 @@ function Home({user, likedList, setLikedList}) {
     </div>
   );
 }
+)
 
 export default Home;

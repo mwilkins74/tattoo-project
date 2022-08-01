@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :styles, only: [:index, :show]
   resources :tattoos, only: [:show] #maybe create if we don't get away with it
-  resources :users, only: [:create, :update]
+  resources :users, only: [:create, :update, :destroy]
   resources :favorites
   
 

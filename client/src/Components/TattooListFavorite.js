@@ -14,7 +14,7 @@ function TattooListFavorite({ user, tattoos, likedList, setLikedList, setTattoos
 
   // function handleDeleteTattoo(id){
   //   fetch(`/my-favorites/${(id)}`, {
-  //     method: "DELETE",
+  /   method: "DELETE",
   //   }).then((r) => {
   //     if (r.ok) {
   //       r.json().then((data) => {
